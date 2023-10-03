@@ -32,7 +32,227 @@ pipeline {
 				slackSend(
 						color: (currentBuild.currentResult == 'SUCCESS') ? 'good' : 'danger',
 						channel: '#sagan-content',
-						message: "${currentBuild.fullDisplayName} - `${currentBuild.currentResult}`\n${env.BUILD_URL}")
+		
+
+	options {
+
+	options {
+		disableConcurrentBuilds()
+		buildDiscarder(logRotator(numToKeepStr: '14'))
+	}
+
+	stages {
+		stage("test: baseline (jdk8)") {
+			agent {
+				docker {
+					image 'adoptopenjdk/openjdk8:latest'
+					args '-v $HOME/.m2:/tmp/jenkins-home/.m2'
+				}
+			}
+			options { timeout(time: 30, unit: 'MINUTES') }
+			steps {
+				sh 'test/run.sh'
+			}
+		}
+
+
+	options {
+		disableConcurrentBuilds()
+		buildDiscarder(logRotator(numToKeepStr: '14'))
+	}
+
+	stages {
+		stage("test: baseline (jdk8)") {
+			agent {
+				docker {
+					image 'adoptopenjdk/openjdk8:latest'
+					args '-v $HOME/.m2:/tmp/jenkins-home/.m2'
+				}
+			}
+			options { timeout(time: 30, unit: 'MINUTES') }
+			steps {
+				sh 'test/run.sh'
+			}
+		}
+
+
+	options {
+		disableConcurrentBuilds()
+		buildDiscarder(logRotator(numToKeepStr: '14'))
+	}
+
+	stages {
+		stage("test: baseline (jdk8)") {
+			agent {
+				docker {
+					image 'adoptopenjdk/openjdk8:latest'
+					args '-v $HOME/.m2:/tmp/jenkins-home/.m2'
+				}
+			}
+			options { timeout(time: 30, unit: 'MINUTES') }
+			steps {
+				sh 'test/run.sh'
+			}
+		}
+
+
+	options {
+		disableConcurrentBuilds()
+		buildDiscarder(logRotator(numToKeepStr: '14'))
+	}
+
+	stages {
+		stage("test: baseline (jdk8)") {
+			agent {
+				docker {
+					image 'adoptopenjdk/openjdk8:latest'
+					args '-v $HOME/.m2:/tmp/jenkins-home/.m2'
+				}
+			}
+			options { timeout(time: 30, unit: 'MINUTES') }
+			steps {
+				sh 'test/run.sh'
+			}
+		}
+
+
+	options {
+		disableConcurrentBuilds()
+		buildDiscarder(logRotator(numToKeepStr: '14'))
+	}
+
+	stages {
+		stage("test: baseline (jdk8)") {
+			agent {
+				docker {
+					image 'adoptopenjdk/openjdk8:latest'
+					args '-v $HOME/.m2:/tmp/jenkins-home/.m2'
+				}
+			}
+			options { timeout(time: 30, unit: 'MINUTES') }
+			steps {
+				sh 'test/run.sh'
+			}
+		}
+
+
+	options {
+		disableConcurrentBuilds()
+		buildDiscarder(logRotator(numToKeepStr: '14'))
+	}
+
+	stages {
+		stage("test: baseline (jdk8)") {
+			agent {
+				docker {
+					image 'adoptopenjdk/openjdk8:latest'
+					args '-v $HOME/.m2:/tmp/jenkins-home/.m2'
+				}
+			}
+			options { timeout(time: 30, unit: 'MINUTES') }
+			steps {
+				sh 'test/run.sh'
+			}
+		}
+
+
+	options {
+		disableConcurrentBuilds()
+		buildDiscarder(logRotator(numToKeepStr: '14'))
+	}
+
+	stages {
+		stage("test: baseline (jdk8)") {
+			agent {
+				docker {
+					image 'adoptopenjdk/openjdk8:latest'
+					args '-v $HOME/.m2:/tmp/jenkins-home/.m2'
+				}
+			}
+			options { timeout(time: 30, unit: 'MINUTES') }
+			steps {
+				sh 'test/run.sh'
+			}
+		}
+
+
+	options {
+		disableConcurrentBuilds()
+		buildDiscarder(logRotator(numToKeepStr: '14'))
+	}
+
+	stages {
+		stage("test: baseline (jdk8)") {
+			agent {
+				docker {
+					image 'adoptopenjdk/openjdk8:latest'
+					args '-v $HOME/.m2:/tmp/jenkins-home/.m2'
+				}
+			}
+			options { timeout(time: 30, unit: 'MINUTES') }
+			steps {
+				sh 'test/run.sh'
+			}
+		}
+
+
+	options {
+		disableConcurrentBuilds()
+		buildDiscarder(logRotator(numToKeepStr: '14'))
+	}
+
+	stages {
+		stage("test: baseline (jdk8)") {
+			agent {
+				docker {
+					image 'adoptopenjdk/openjdk8:latest'
+					args '-v $HOME/.m2:/tmp/jenkins-home/.m2'
+				}
+			}
+			options { timeout(time: 30, unit: 'MINUTES') }
+			steps {
+				sh 'test/run.sh'
+			}
+		}
+
+
+	options {
+		disableConcurrentBuilds()
+		buildDiscarder(logRotator(numToKeepStr: '14'))
+	}
+
+	stages {
+		stage("test: baseline (jdk8)") {
+			agent {
+				docker {
+					image 'adoptopenjdk/openjdk8:latest'
+					args '-v $HOME/.m2:/tmp/jenkins-home/.m2'
+				}
+			}
+			options { timeout(time: 30, unit: 'MINUTES') }
+			steps {
+				sh 'test/run.sh'
+			}
+		}
+
+		disableConcurrentBuilds()
+		buildDiscarder(logRotator(numToKeepStr: '14'))
+	}
+
+	stages {
+		stage("test: baseline (jdk8)") {
+			agent {
+				docker {
+					image 'adoptopenjdk/openjdk8:latest'
+					args '-v $HOME/.m2:/tmp/jenkins-home/.m2'
+				}
+			}
+			options { timeout(time: 30, unit: 'MINUTES') }
+			steps {
+				sh 'test/run.sh'
+			}
+		}
+				message: "${currentBuild.fullDisplayName} - `${currentBuild.currentResult}`\n${env.BUILD_URL}")
 				emailext(
 						subject: "[${currentBuild.fullDisplayName}] ${currentBuild.currentResult}",
 						mimeType: 'text/html',
